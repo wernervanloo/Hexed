@@ -260,7 +260,7 @@ Another speedup comes from reusing data. Notice that the effect is double buffer
 
 There might be a better (and faster) way to do this though: instead of storing the data inside the other speedcode, you might be able to draw the data directly on the screen if the rasterbeam has already passed that line. That would save quite a lot of stores and lda #'s. You would need a more stable rastertime usage though and a kind of predictor (did the rasterbeam already pass or not?) if this is possible. I've only thought of this a couple of weeks before X2026 and didn't have time anymore to work it out. Probably you could make a much higher scroller this way.
 
-# 3. Spindle
+# 3. Spindle ideas and tips
 
 Here are some thoughts about using Spindle and how Spindle might be improved in the future.
 
@@ -268,7 +268,7 @@ Here are some thoughts about using Spindle and how Spindle might be improved in 
 
 2. I find that sometimes parts will use memory, but only after starting the part and not yet in the prepare function. If you declare the memory use with the 'P' parameter, it might clash with the previous part and Spindle will insist to insert a blank part or a small switch part of your own. Let's say part X uses $4000-$7fff during runtime and the previous part does as well. My solution is to declare the memory use by inheriting it: .byte 'I', >$4000, >$7fff. This solves the problem : there is no clash with the previous part and it still protects the memory by being loaded over or againt the prepare of a next effect. My gripe with it is that things become unclear in the flow diagram : Part X is not really inheriting the data from the previous part. It would be nice if we could have a special parameter for this, with it's own character in the flow diagram (like 'U' for use).
 
-3. Placement of the driver. God. I'm always running into problems with Spindle choosing weird places to put the driver. I've see it place it after the code at a memory address that I declared protected (and it gets written over). I've seen it placed at $fffa while being 16 bytes long. It would be really nice if it were possible to have a parameter to hint Spindle for a nice position in memory to put the driver.
+3. Placement of the driver. God. I'm always running into problems with Spindle choosing weird places to put the driver. I've seen it place it after the code at a memory address that I declared protected (and it gets written over). I've seen it placed at $fffa while being 16 bytes long. It would be really nice if it were possible to have a parameter to hint Spindle for a nice position in memory to put the driver.
 
 4. Sometimes I've had a dreaded error -1073741819 when Spindle crunches all the files. It's unclear what is wrong and by moving some small things around the error disappears. This is probably a small bug in Spindle.
 
