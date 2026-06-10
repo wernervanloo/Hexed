@@ -1,0 +1,27 @@
+# HEXED SIDE 2
+# ------------
+
+10a.unload.pef        -
+10b.credits.pef       -
+|                     -
+10c.preload1.pef      02 = 20
+10d.preload2.pef      02 = 21
+10e.closeborder.pef   02 = 22
+
+11a.rotzoomer.pef     02 = 23
+11b.preload.pef       02 = 24
+
+12a.blocks.pef        02 = 25
+12b.logo.pef          02 = 26
+12c.boogiebars.pef    02 = 27
+12d.border.pef        02 = 28
+12e.openborder.pef    02 = 29
+
+13a.fade.pef          02 = 2a
+13b.zoomscroller.pef  02 = 2b
+13c.fade.pef          02 = 2c
+13d.nova.pef          02 = 2d
+
+14a.heaven.pef        02 = 2e
+14b.switch.pef        02 = 2f
+14c.scrollway.pef     stay

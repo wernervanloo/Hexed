@@ -1,0 +1,39 @@
+wat hebben we nodig?
+-> 2 charsets (ipv 1) = $1000 (voor schaduw ene kant op) + $1000 (voor schaduw andere kant op)
+-> 8 schermen         = $2000 (hergebruik schermen voor 2e scroller. geen probleem, want andere rij
+-> past precies in 1 bank!!
+
+2 charsets, 5 pixels hoog
+
+125% zoom in
+0-badline, charset 0, screen 0  pixel 0
+1                               pixel 1
+2                               pixel 2
+3                               pixel 3
+4                               pixel 3
+5-badline, charset 1            pixel 4
+6                               pixel 5
+7                               pixel 6
+8                               pixel 7
+9                               pixel 7
+10-badline, charset0, screen1   pixel 0+8
+
+100% zoom
+0-badline,charset 0,screen0     pixel 0
+1                               pixel 1
+2                               pixel 2
+3                               pixel 3 <- normal display
+4-badline, charset 1,screen0    pixel 4
+5                               pixel 5
+6                               pixel 6
+7                               pixel 7
+etc
+
+75% zoom out
+0-badline,charset 0,screen0     pixel 0
+1                               pixel 1
+2                               pixel 2  <-
+3-badline, charset 1,screen0    pixel 4  <- pixel 3 is missing
+4                               pixel 5
+5                               pixel 6
+6-badline

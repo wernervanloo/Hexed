@@ -1,0 +1,37 @@
+# HEXED SIDE 1
+# -------------
+
+# basicfade, bitmapsplit and dropdown
+# -----------------------------------
+
+01a.load.pef          02 = 01
+01b.basicfade.pef     02 = 02
+01c.clean.pef         02 = 03
+01d.bitmapchange.pef  02 = 04
+01e.drop.pef          02 = 05
+01f.bitmapfade.pef    02 = 06
+01g.load.pef          02 = 07
+
+# message starts at an exact frame, so rasterlogo can start a delta number of frames later
+01h.message.pef       02 = 08
+01i.preload.pef       02 = 09
+
+02a.rasterlogo.pef    02 = 0a
+02b.switch.pef        02 = 0b
+02c.kefrens.pef       02 = 0c
+02d.chessboard.pef    02 = 0d
+02e.message.pef       -
+02f.messageload.pef   02 = 0e
+
+# start the greetings with the start screen and the empty.bin file, directly start loading the rest of the needed data for scrolling
+03c.greetings.pef      02 = 0f
+# when ready, load the gfx data for the scrolling part
+|                     02 = 0f
+03d.loadfadeout.pef   02 = 10
+
+04a.border.pef        02 = 11
+04b.switch.pef        02 = 12
+04c.censorscroll.pef  02 = 13
+
+05a.element54.pef     02 = 14
+05b.flipside.pef      -

@@ -1,0 +1,1 @@
+..\prgs\tscrunch.exe -x $080e main.prg ..\prgs\kefrens_crunched.prg
